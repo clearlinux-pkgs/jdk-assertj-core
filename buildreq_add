@@ -1,0 +1,6 @@
+# This file contains additional build requirements that did not get
+# picked up automatically. One name per line, no whitespace.
+jdk-cglib
+jdk-easymock3
+jdk-felix
+jdk-maven-bundle-plugin

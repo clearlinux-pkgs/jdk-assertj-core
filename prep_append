@@ -1,0 +1,14 @@
+python3 /usr/share/java-utils/pom_editor.py pom_remove_parent
+python3 /usr/share/java-utils/pom_editor.py pom_xpath_inject   "pom:project" "<groupId>org.assertj</groupId>"
+python3 /usr/share/java-utils/pom_editor.py pom_remove_plugin  :maven-javadoc-plugin
+python3 /usr/share/java-utils/pom_editor.py pom_remove_plugin  org.jacoco:jacoco-maven-plugin
+python3 /usr/share/java-utils/pom_editor.py pom_remove_plugin  org.sonatype.plugins:jarjar-maven-plugin
+python3 /usr/share/java-utils/pom_editor.py pom_xpath_inject   "pom:project" "
+
+    <properties>
+        <maven.compiler.target>1.7</maven.compiler.target>
+        <maven.compiler.source>1.7</maven.compiler.source>
+    </properties>"
+
+# package org.mockito.internal.util.collections does not exist
+rm -rf ./src/test/java/org/assertj/core/error/ShouldContainString_create_Test.java
